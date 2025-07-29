@@ -1,0 +1,199 @@
+/* Fondo y scroll */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #e0e0e0;
+  background: linear-gradient(-45deg, #0f2027, #2c5364, #06816d, #007991);
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Animación del fondo */
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Contenedor general */
+.home-container {
+  padding-top: 70px; /* espacio para la barra fija */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Contenido limitado y centrado */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex: 1;
+  
+}
+
+/* Barra de navegación fija */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: rgba(1, 41, 71, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-shadow: 0 0 10px #000000;
+}
+
+.nav-button {
+  color: #d1e8e2;
+  background: transparent;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:first-child {
+  margin-left: 0;
+}
+
+.nav-button:hover {
+  background: linear-gradient(90deg, #3acfd5, #3a9bd5);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 8px #3acfd5;
+}
+
+/* Header */
+.home-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+  color: #000000;
+  text-shadow: 0 0 10px #3acfd5;
+  text-shadow: 0 0 6px rgba(58,207,213,0.8);
+}
+
+/* Secciones */
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  background: rgba(255 255 255 / 0.1);
+  border-radius: 16px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.37),
+    inset 0 0 10px rgba(58, 207, 213, 0.2);
+  backdrop-filter: blur(8px);
+  color: #d0f0f9;
+  border: 1px solid rgba(58, 207, 213, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.section:hover {
+  box-shadow:
+    0 12px 48px rgba(58, 207, 213, 0.7),
+    inset 0 0 20px rgba(58, 207, 213, 0.4);
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #000000;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #bbdefb;
+}
+
+/* Tabla de vehículos */
+.tabla-vehiculos {
+  width: 100%;
+  max-width: 1000px;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #e0f7fa;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabla-vehiculos th,
+.tabla-vehiculos td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabla-vehiculos th {
+  background-color: rgba(58, 207, 213, 0.2);
+  color: #ffffff;
+  text-shadow: 0 0 10px #000000;
+}
+
+.tabla-vehiculos tr:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Footer fijo al final */
+.footer-info {
+  background-color: rgba(1, 41, 71, 0.85);
+  color: #d1e8e2;
+  padding: 20px 282px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(58, 207, 213, 0.3);
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  max-width: 400px;
+  margin: 10px 20px;
+}
+
+.footer-section h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #000000;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cdefff;
+}
+
+.title {
+  color: #000000;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #3acfd5;
+}

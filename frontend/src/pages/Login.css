@@ -1,0 +1,171 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(-45deg, #0f2027, #2c5364, #06816d, #007991);
+  background-size: 400% 400%;
+  animation: fondoAnimado 15s ease infinite;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Animación del fondo */
+@keyframes fondoAnimado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Contenedor principal */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 60px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Efecto de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Formulario estilo glassmorphism */
+form {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #020202;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scaleIn 1s ease;
+}
+
+/* Entrada suave */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Campos de entrada con efecto */
+input {
+  margin: 10px 0;
+  padding: 12px;
+  width: 260px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Botón moderno */
+button {
+  margin-top: 10px;
+  padding: 12px 24px;
+  cursor: pointer;
+  background: linear-gradient(to right, #166ac9, #005fa3);
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Mensaje */
+p {
+  margin-top: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Capa extra para espirales animadas mejoradas */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.07) 8%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 12%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.07) 8%, transparent 35%),
+    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.04) 10%, transparent 45%);
+  background-size: 250px 250px;
+  animation: girarEspiralesMejorado 40s linear infinite, escalaEspirales 10s ease-in-out infinite;
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+/* Movimiento diagonal más complejo */
+@keyframes girarEspiralesMejorado {
+  0% {
+    background-position: 0 0, 125px 125px, 60px 60px, 180px 180px;
+  }
+  50% {
+    background-position: 130px 150px, 0 0, 190px 150px, 0 0;
+  }
+  100% {
+    background-position: 0 0, 125px 125px, 60px 60px, 180px 180px;
+  }
+}
+
+/* Efecto de escalado suave para dar profundidad */
+@keyframes escalaEspirales {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Para que el contenido quede encima */
+.App {
+  position: relative;
+  z-index: 1;
+}

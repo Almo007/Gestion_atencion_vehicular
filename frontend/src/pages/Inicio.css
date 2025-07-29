@@ -1,0 +1,142 @@
+/* Contenedor principal del contenido */
+.inicio-main {
+  padding: 2rem;
+  margin-left: 220px;
+  width: calc(100% - 220px);
+  min-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Sidebar lateral con estilo glassmorphism */
+.inicio-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100vh;
+  background: rgba(1, 41, 71, 0.65);
+  backdrop-filter: blur(8px);
+  color: #e0f7fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 3px 0 12px rgba(0, 255, 255, 0.2);
+  z-index: 1000;
+}
+
+/* Botones del sidebar */
+.inicio-sidebar button {
+  background: transparent;
+  border: none;
+  color: #e0f7fa;
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: left;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inicio-sidebar button:hover {
+  background: linear-gradient(90deg, #3acfd5, #3a9bd5);
+  color: white;
+  box-shadow: 0 0 12px rgba(58, 207, 213, 0.5);
+}
+
+/* Texto del sidebar */
+.inicio-sidebar p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #b2ebf2;
+}
+
+/* Botón de cerrar sesión */
+.inicio-sidebar .logout-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.inicio-sidebar .logout-button:hover {
+  background-color: darkred;
+}
+
+/* Tarjeta de solicitud con glassmorphism */
+.solicitud-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(58, 207, 213, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.1);
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 16px;
+  color: #000000;
+  text-shadow: 0 0 10px #ffffff;
+  transition: transform 0.3s ease;
+  animation: scaleIn 0.8s ease;
+}
+
+.solicitud-card:hover {
+  transform: scale(1.02);
+}
+
+/* Paginación activa */
+.inicio-main button.paginacion-activa {
+  background-color: #3acfd5;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.inicio-main button.paginacion-activa:hover {
+  background-color: #31b5bb;
+  transform: scale(1.05);
+}
+
+/* Texto resaltado */
+.text {
+  color: #000000;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.title {
+  color: #ffffff;
+  text-shadow: 0 0 10px #000000;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
